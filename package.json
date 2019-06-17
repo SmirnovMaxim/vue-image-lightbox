@@ -1,7 +1,7 @@
 {
   "name": "vue-image-lightbox",
   "description": "A Vue.js package to display an image gallery lightbox",
-  "version": "6.2.1",
+  "version": "6.2.2",
   "author": "Nguyen Thien Dzung <dzungnguyenvn@outlook.com>",
   "license": "MIT",
   "main": "dist/vue-image-lightbox.min.js",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/pexea12/vue-image-lightbox"
+    "url": "https://github.com/SmirnovMaxim/vue-image-lightbox"
   },
   "keywords": [
     "vue",
@@ -27,9 +27,9 @@
     "image lightbox"
   ],
   "bugs": {
-    "url": "https://github.com/pexea12/vue-image-lightbox/issues"
+    "url": "https://github.com/SmirnovMaxim/vue-image-lightbox/issues"
   },
-  "homepage": "https://github.com/pexea12/vue-image-lightbox",
+  "homepage": "https://github.com/SmirnovMaxim/vue-image-lightbox",
   "dependencies": {
     "@babel/runtime": "^7.4.3",
     "babel-loader": "^8.0.5",
