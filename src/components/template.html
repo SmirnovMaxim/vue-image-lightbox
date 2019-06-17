@@ -8,10 +8,10 @@
     <div class="vue-lb-content">
       <div class="vue-lb-header">
         <span></span>
-        <button 
-        type="button" 
-        :title="closeText" 
-        class="vue-lb-button-close" 
+        <button
+        type="button"
+        :title="closeText"
+        class="vue-lb-button-close"
         >
           <slot name="close">
             <span>
@@ -23,24 +23,24 @@
         </button> <!-- .vue-lb-button-close -->
 
       </div> <!-- .vue-lb-header -->
-      <div 
+      <div
         class="vue-lb-figure"
         @click.stop
       >
-        <transition 
-          mode="out-in" 
+        <transition
+          mode="out-in"
           name="fade"
         >
-          <img 
+          <img
+            v-lazy="images[select].src"
             :key="images[select].src"
-            :src="images[select].src"
             :srcset="images[select].srcset || ''"
             class="vue-lb-modal-image"
           >
         </transition>
 
-        <div 
-          class="vue-lb-info" 
+        <div
+          class="vue-lb-info"
           v-html="images[select].caption"
           v-show="showCaption"
         ></div>
@@ -54,17 +54,17 @@
             >
               {{ select + 1 }} / {{ images.length }}
             </slot>
-          </div> 
-        </div> 
+          </div>
+        </div>
 
-      </div> 
+      </div>
     </div> <!-- .vue-lb-content -->
     <div class="vue-lb-thumbnail-wrapper">
     <div v-if="showThumbs" class="vue-lb-thumbnail">
-      <button 
+      <button
         v-if="images.length > 1"
-        type="button" 
-        class="vue-lb-thumbnail-arrow vue-lb-thumbnail-left" 
+        type="button"
+        class="vue-lb-thumbnail-arrow vue-lb-thumbnail-left"
         :title="previousThumbText"
         @click.stop="previousImage()"
       >
@@ -77,21 +77,21 @@
         </slot>
       </button>
 
-      <div 
-        v-for="(image, index) in imagesThumb" 
+      <div
+        v-for="(image, index) in imagesThumb"
         :key="typeof image === 'string' ? `${image}${index}` : index"
-        :class="'vue-lb-modal-thumbnail' + (select === index ? '-active' : '')" 
+        :class="'vue-lb-modal-thumbnail' + (select === index ? '-active' : '')"
         v-lazy:background-image="image"
         v-show="index >= thumbIndex.begin && index <= thumbIndex.end"
         @click.stop="showImage(index)"
       >
       </div>
 
-      <button 
+      <button
         v-if="images.length > 1"
-        type="button" 
-        class="vue-lb-thumbnail-arrow vue-lb-thumbnail-right" 
-        :title="nextThumbText" 
+        type="button"
+        class="vue-lb-thumbnail-arrow vue-lb-thumbnail-right"
+        :title="nextThumbText"
         @click.stop="nextImage()"
       >
         <slot name="nextThumb">
@@ -104,11 +104,11 @@
       </button>
     </div> <!-- .vue-lb-thumbnail -->
     </div>
-    <button 
+    <button
       v-if="images.length > 1"
-      type="button" 
-      class="vue-lb-arrow vue-lb-left" 
-      :title="previousText" 
+      type="button"
+      class="vue-lb-arrow vue-lb-left"
+      :title="previousText"
       @click.stop="previousImage()"
     >
       <slot name="previous">
@@ -120,11 +120,11 @@
       </slot>
     </button>
 
-    <button 
+    <button
       v-if="images.length > 1"
-      type="button" 
-      class="vue-lb-arrow vue-lb-right" 
-      :title="nextText" 
+      type="button"
+      class="vue-lb-arrow vue-lb-right"
+      :title="nextText"
       @click.stop="nextImage()"
     >
       <slot name="next">
@@ -135,5 +135,5 @@
         </span>
       </slot>
     </button>
-  </div> <!-- .vue-lb-container --> 
+  </div> <!-- .vue-lb-container -->
 </div>
